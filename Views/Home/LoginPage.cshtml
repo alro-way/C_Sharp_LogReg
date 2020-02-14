@@ -1,0 +1,24 @@
+@using System.ComponentModel.DataAnnotations;
+@using C_Sharp_LogReg.Models;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <a href="/">Go to Registration page</a>
+    <h1 class="display-4">Welcome</h1>
+    <h3 class="display-4">to Login Page</h3>
+
+    @model Login
+    <form asp-action="Login" asp-controller="Home" method ="post">
+
+        <p><label asp-for="Email">Email:</label></p>
+        <p><input asp-for="Email" type="email"></p>
+        <p><span class="valid" asp-validation-for="Email"></span></p>
+
+        <p><label asp-for="Password">Password:</label></p>
+        <p><input asp-for="Password" type="password"></p>
+        <p><span class="valid" asp-validation-for="Password"></span></p>
+
+        <button>Sign in</button>
+    </form>

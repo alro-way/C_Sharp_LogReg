@@ -1,0 +1,35 @@
+@using System.ComponentModel.DataAnnotations;
+@using C_Sharp_LogReg.Models;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <p>Go to <a href="/login_page">Log in</a></p>
+    <h1 class="display-4">Welcome</h1>
+    <h3 class="display-4">to Registration Page</h3>
+
+    @model User
+    <form asp-action="Create" asp-controller="Home" method ="post">
+        <p><label asp-for="FirstName">First Name:</label></p>
+        <p><input asp-for="FirstName" type="text"></p>
+        <p><span class="valid" asp-validation-for="FirstName"></span></p>
+
+        <p><label asp-for="LastName">Last Name:</label></p>
+        <p><input asp-for="LastName" type="text"></p>
+        <p><span class="valid" asp-validation-for="LastName"></span></p>
+
+        <p><label asp-for="Email">Email:</label></p>
+        <p><input asp-for="Email" type="email"></p>
+        <p><span class="valid" asp-validation-for="Email"></span></p>
+
+        <p><label asp-for="Password">Password:</label></p>
+        <p><input asp-for="Password" type="password"></p>
+        <p><span class="valid" asp-validation-for="Password"></span></p>
+
+        <p><label asp-for="Confirm">Password confirmation:</label></p>
+        <p><input asp-for="Confirm" type="password"></p>
+        <p><span class="valid" asp-validation-for="Confirm"></span></p>
+
+        <button>Sing up</button>
+    </form>
